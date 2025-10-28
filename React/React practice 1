@@ -1,0 +1,36 @@
+// React Practice 1: ProductCard Component Using Props
+// Objective: Build a reusable React component that displays product details using props
+
+import React from 'react';
+import './ProductCard.css'; // Optional: Add styling
+
+// ProductCard Component
+const ProductCard = ({ name, price, inStock }) => {
+  return (
+    <div className="product-card">
+      <h2 className="product-name">{name}</h2>
+      <p className="product-price">Price: ${price}</p>
+      <p className="product-stock">
+        Status: {inStock ? 'In Stock' : 'Out of Stock'}
+      </p>
+    </div>
+  );
+};
+
+// Example Usage
+const App = () => {
+  return (
+    <div className="app">
+      <h1>Product List</h1>
+      <div className="product-list">
+        <ProductCard name="Laptop" price={999} inStock={true} />
+        <ProductCard name="Smartphone" price={699} inStock={true} />
+        <ProductCard name="Headphones" price={199} inStock={false} />
+        <ProductCard name="Tablet" price={499} inStock={true} />
+      </div>
+    </div>
+  );
+};
+
+export default ProductCard;
+export { App };
